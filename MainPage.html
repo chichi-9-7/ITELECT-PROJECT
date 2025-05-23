@@ -64,33 +64,51 @@
 
         </style>
         <body>
-            <div class="container">
-                <h2>Blood Donation Volunteer Sign Up</h2>
-                <form action="submit_form.php" method="post">
+            <header>
+                <h1>Volunteer Sign Up</h1>
+                <p>Join us in making a differences in our surrounding!</p>
+            </header>
+            <div class="sign-up container">
+                <h2>Create Your Volunteer Profile here</h2>
+                <form id="signupForm">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email Address</label>
                  <input type="email" id="name" name="email" required>
                    <label for="Phone">Phone Number</label>
                    <input type="tel" id="phone" name="phone" required>
-                   <label for="blood-group">Blood Group</label>
-                   <select id="blood-group" name="blood-group" required>
+                
+                   <label for="interest">Volunteer</label>
+                   <select id="interest" name="interest" required>
                     <option value="">Select</option>
-                     <option value="A+">A+</option>
-                      <option value="A-">A-</option>
-                       <option value="B+">B+</option>
-                        <option value="B-">B-</option>
-                         <option value="O+">O+</option>
-                          <option value="O-">O-</option>
-                           <option value="AB+">AB+</option>
-                            <option value="AB-">AB-</option>
+                     <option value="Charity">Charity Volunteer</option>
+                      <option value="Clean Up Drive">Clean Up Drive</option>
+                       <option value="Teaching">Teaching Volunteer</option>
+                        <option value="Relief">Disaster Volunteer</option>
+                         
                    </select>
-                   <label for="city">City</label>
-                   <input type="text" id="city" name="city" required>
                    <button type="submit">Sign Up</button>
                    </form>
-                   <p>Already have an account?<a href="volunteerlogin.html">Login Here</a></p>
-            </div>
+                   <div class="link-login">Already signed up? <a href="volunteerlogin.html">Login Here</a> 
+                    </div>
+                  </div>
+          <footer>
+            &copy; 2025 VolunteerPH | Your Journey starts here!
+          </footer>
+          <script>
+            document.getElementById('signupForm').addEventListener('submit', function(event)){
+                event.preventDefault();
+                const name = document.getElementById('Full Name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const interest = document.getElementById('interest').value.trim();
+
+                if (!name || !emaill || !phone || !interest){
+                    alert("Please complete all fields.");
+                    return;
+                }
+            }
+          </script>
         </body>
     </head>
 </html>
